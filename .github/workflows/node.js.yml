@@ -50,6 +50,6 @@ jobs:
     - run: yarn --frozen-lockfile
 
     - name: Build for dev
-      uses: .github/actions/build
+      uses: ./.github/actions/build
       with:
         build-type: dev
