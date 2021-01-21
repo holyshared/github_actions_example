@@ -6,6 +6,7 @@
     "typescript": "^4.1.3"
   },
   "scripts": {
+    "build:dev": "tsc --outDir ./build",
     "test": "jest"
   }
 }
