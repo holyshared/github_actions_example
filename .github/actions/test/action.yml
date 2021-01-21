@@ -1,0 +1,10 @@
+name: test
+description: test
+runs:
+  using: "composite"
+  steps:
+    - run: yarn --frozen-lockfile
+      shell: bash
+
+    - run: yarn test
+      shell: bash
