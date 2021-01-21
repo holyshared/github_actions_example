@@ -11,7 +11,7 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-20.04
 
@@ -33,3 +33,23 @@ jobs:
 
     - run: yarn --frozen-lockfile
     - run: yarn test
+
+  build:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Git checkout
+      uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - run: yarn --frozen-lockfile
+
+    - name: Build for dev
+      uses: .github/actions/build
+      with:
+        build-type: dev

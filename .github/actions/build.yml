@@ -1,0 +1,12 @@
+name: build
+description: build
+inputs:
+  build-type:
+    description: 'type of build'
+    required: false
+    default: 'dev'
+runs:
+  using: "composite"
+  steps:
+    - run: yarn build:${{ inputs.buildType }}
+      shell: bash
