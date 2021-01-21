@@ -53,3 +53,9 @@ jobs:
       uses: ./.github/actions/build
       with:
         build-type: dev
+
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-package
+        path: ./build
