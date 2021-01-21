@@ -3,10 +3,10 @@ description: build
 inputs:
   build-type:
     description: 'type of build'
-    required: false
+    required: true
     default: 'dev'
 runs:
   using: "composite"
   steps:
-    - run: yarn build:${{ inputs.buildType }}
+    - run: yarn build:${{ inputs.build-type }}
       shell: bash
